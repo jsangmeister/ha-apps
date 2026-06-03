@@ -1,0 +1,30 @@
+name: Watcharr
+slug: watcharr
+description: Self-hosted watched list for movies, TV, anime, and games
+url: https://github.com/sbondCo/Watcharr
+
+version: "v3.0.1"
+stage: experimental
+
+arch:
+  - amd64
+  - aarch64
+
+image: ghcr.io/sbondco/watcharr
+legacy: true
+init: false
+
+startup: application
+boot: auto
+
+ports:
+  3080/tcp: 3080
+ports_description:
+  3080/tcp: Watcharr web interface
+
+webui: "http://[HOST]:[PORT:3080]"
+watchdog: "tcp://[HOST]:[PORT:3080]"
+
+backup: cold
+
+schema: false
